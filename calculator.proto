@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package calc;
+
+message CalcRequest{
+	double value1 = 1;
+	double value2 = 2;
+	double card = 3;
+	string email = 4;
+}
+
+message CalcResponse{
+	string result = 1;
+}
+message CreditCardResponse{
+	string ccresult = 1;
+}
+service CalcService{
+	rpc Calcservice (CalcRequest) returns (CalcResponse){
+	}
+	rpc CreditCardservice (CalcRequest) returns (CreditCardResponse){
+	}
+}
